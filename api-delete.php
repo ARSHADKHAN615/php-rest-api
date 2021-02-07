@@ -5,9 +5,9 @@ header("Access-control-allow-origin:*");
 header("Access-control-allow-methods:DELETE");
 
 
-// $data = json_decode(file_get_contents("php://input"), true);
-// $student_id = $data['sid'];
-$student_id = $_GET['sid'];
+$data = json_decode(file_get_contents("php://input"), true);
+$student_id = $data['sid'];
+// $student_id = $_GET['sid'];
 require "config.php";
 $sql = "DELETE  FROM form WHERE id=$student_id";
 $result = mysqli_query($connection, $sql) or die("Failed");

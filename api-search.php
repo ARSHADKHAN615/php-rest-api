@@ -5,10 +5,10 @@ header("Access-control-allow-origin:*");
 header("Access-control-allow-methods:DELETE");
 
 
-// $data = json_decode(file_get_contents("php://input"), true);
-// $search_value = $data['search'];
+$data = json_decode(file_get_contents("php://input"), true);
+$search_value = $data['search'];
 
-$search_value = isset($_GET['search']) ? $_GET['search'] : die();
+// $search_value = isset($_GET['search']) ? $_GET['search'] : die();
 
 require "config.php";
 $sql = "SELECT * FROM form WHERE name LIKE '%$search_value%'";

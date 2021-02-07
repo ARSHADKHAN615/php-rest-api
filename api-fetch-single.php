@@ -3,9 +3,10 @@
 header("Content-Type: application/json");
 header("Access-control-allow-origin:*");
 
-// $data = json_decode(file_get_contents("php://input"), true);
-// $student_id = $data['sid'];
-$student_id = $_GET['sid'];
+$data = json_decode(file_get_contents("php://input"), true);
+$student_id = $data['sid'];
+
+// $student_id = $_GET['sid'];
 
 require "config.php";
 $sql = "SELECT * FROM form WHERE id=$student_id";
